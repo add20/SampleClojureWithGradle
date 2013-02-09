@@ -1,0 +1,21 @@
+buildscript {
+  repositories { mavenRepo name: 'clojars', url: 'http://clojars.org/repo' }
+  dependencies { classpath "clojuresque:clojuresque:1.5.4" }
+}
+
+apply plugin: "clojure"
+
+defaultTasks 'test'
+
+repositories {
+  mavenCentral()
+  clojarsRepo()
+}
+
+dependencies {
+  compile 'org.clojure:clojure:1.4.0'
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.4'
+}
